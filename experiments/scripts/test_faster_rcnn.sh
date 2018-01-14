@@ -36,6 +36,14 @@ case ${DATASET} in
     ANCHORS="[4,8,16,32]"
     RATIOS="[0.5,1,2]"
     ;;
+  xview)
+    TRAIN_IMDB="xview_train+xview_val"
+    TEST_IMDB="xview_test"
+    STEPSIZE="[900000]"
+    ITERS=15000
+    ANCHORS="[4,8,16,32]"
+    RATIOS="[0.5,1,2]"
+    ;;
   *)
     echo "No dataset given"
     exit

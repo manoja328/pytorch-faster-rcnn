@@ -39,11 +39,20 @@ case ${DATASET} in
     ANCHORS="[4,8,16,32]"
     RATIOS="[0.5,1,2]"
     ;;
+  xview)
+    TRAIN_IMDB="xview_train+xview_val"
+    TEST_IMDB="xview_test"
+    STEPSIZE="[900000]"
+    ITERS=1190000
+    ANCHORS="[4,8,16,32]"
+    RATIOS="[0.5,1,2]"
+    ;;
   *)
     echo "No dataset given"
     exit
     ;;
 esac
+
 
 LOG="experiments/logs/${NET}_${TRAIN_IMDB}_${EXTRA_ARGS_SLUG}_${NET}.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
 exec &> >(tee -a "$LOG")
